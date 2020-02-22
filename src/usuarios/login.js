@@ -12,10 +12,7 @@ class Login {
             return {statusCode: 200 }
         }
         if(await this.user.login(email,senha) == false){
-            return {statusCode: 401, message: "Email invalido" }
-        }
-        if(await this.user.login(email,senha) == false){
-            return {statusCode: 401, message: "Senha invalido" }
+            return {statusCode: 401, message: "Email invalido ou senha" }
         }
     }
 }
