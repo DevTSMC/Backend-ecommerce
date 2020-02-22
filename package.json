@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DevTSMC/Backend-ecommerce/issues"
   },
-  "homepage": "https://github.com/DevTSMC/Backend-ecommerce#readme"
+  "homepage": "https://github.com/DevTSMC/Backend-ecommerce#readme",
+  "dependencies": {
+    "standardjs": "^1.0.0-alpha"
+  }
 }
