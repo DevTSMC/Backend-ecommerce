@@ -22,7 +22,15 @@ describe('Login', () => {
     const response = await request(app)
       .post('/login')
       .send({
-        password: 'senha_valida'
+        senha: 'senha_valida'
+      })
+    expect(response.status).toBe(401)
+  })
+  test('deve retornar 401 se senha nao for passada', async () => {
+    const response = await request(app)
+      .post('/login')
+      .send({
+        email: 'email_valido@email.com'
       })
     expect(response.status).toBe(401)
   })
