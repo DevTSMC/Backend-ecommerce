@@ -1,18 +1,19 @@
-class db_Manage{
-    constructor (email, senha){
-        this.email = email
-        this.senha = senha
+class DbManage {
+  constructor (email, senha) {
+    this.email = email
+    this.senha = senha
+  }
+
+  async login (email, senha) {
+    if (this.email === email && this.senha === senha) {
+      return true
     }
-    async login(email, senha){
-        if(this.email == email && this.senha == senha){
-            return true
-        }
-        if(this.email != email){
-            return false
-        }
-        if(this.senha != senha){
-            return false
-        }
+    if (this.email !== email) {
+      return false
     }
+    if (this.senha !== senha) {
+      return false
+    }
+  }
 }
-module.exports = db_Manage
+module.exports = DbManage
