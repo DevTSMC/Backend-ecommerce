@@ -1,7 +1,7 @@
 const User = require('../../src/usuarios/login')
 
 const makeSUT = () => {
-  const sut = new User('email_valido@email.com', 'correta@senha')
+  const sut = new User('email_valido@email.com', 'correta@senha', true)
   return {
     sut
   }
