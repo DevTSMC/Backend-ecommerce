@@ -1,7 +1,7 @@
 const User = require('../helpers/login_helper')
 class Login {
-  constructor (email, senha) {
-    this.user = new User(email, senha)
+  constructor (email, senha, test) {
+    this.user = new User(email, senha, test)
   }
 
   async login (httpRequest) {
