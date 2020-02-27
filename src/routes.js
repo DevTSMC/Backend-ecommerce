@@ -1,6 +1,8 @@
 const routes = require('express').Router()
-const SessionController = require('./controllers/SessionController.js')
+const LoginController = require('./controllers/LoginController')
+const DeleteController = require('./controllers/DeleteController')
 
-routes.post('/login', SessionController.login)
+routes.post('/login', LoginController.login)
+routes.post('/delete', DeleteController.delete)
 
 module.exports = routes
