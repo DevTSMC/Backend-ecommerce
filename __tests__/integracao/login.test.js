@@ -6,17 +6,12 @@ const { User } = require('../../src/models')
 const makeSUT = async () => {
   class CreateUser {
     async create () {
-<<<<<<< HEAD
-      const user = await User.create({ email: 'email_valido@email.com', senha: 'senha_valida', name: 'Tabocinha' })
-      return user
-=======
       try {
         const user = await User.create({ email: 'email_valido@email.com', senha: 'senha_valida', name: 'nome_valido' })
         return user
       } catch (error) {
         console.error(error)
       }
->>>>>>> feature/0.7-DeleteUser
     }
   }
   const user = await new CreateUser()
