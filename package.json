@@ -4,9 +4,9 @@
   "description": "Backend",
   "main": "index.js",
   "scripts": {
-    "pretest": "set NODE_ENV=test && sequelize db:migrate",
+    "pretest": "set NODE_ENV=test && npx sequelize db:migrate",
     "test": "set NODE_ENV=test && jest",
-    "postest": "set NODE_ENV=test && sequelize db:undo:all"
+    "posttest": "set NODE_ENV=test && npx sequelize db:migrate:undo:all"
   },
   "repository": {
     "type": "git",

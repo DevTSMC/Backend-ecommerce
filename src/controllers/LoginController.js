@@ -1,7 +1,11 @@
 const User = require('../usuarios/login')
+<<<<<<< HEAD:src/controllers/SessionController.js
 const CreateUser = require('../usuarios/cadastro')
 
 class SessionController {
+=======
+class LoginController {
+>>>>>>> feature/0.7-DeleteUser:src/controllers/LoginController.js
   async login (req, res) {
     const { email, senha } = req.body
     const user = new User(email, senha, false)
@@ -19,4 +23,4 @@ class SessionController {
     return res.status(userC.statusCode).json({ message: userC.message })
   }
 }
-module.exports = new SessionController()
+module.exports = new LoginController()

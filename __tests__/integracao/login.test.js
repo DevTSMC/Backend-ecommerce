@@ -6,8 +6,17 @@ const { User } = require('../../src/models')
 const makeSUT = async () => {
   class CreateUser {
     async create () {
+<<<<<<< HEAD
       const user = await User.create({ email: 'email_valido@email.com', senha: 'senha_valida', name: 'Tabocinha' })
       return user
+=======
+      try {
+        const user = await User.create({ email: 'email_valido@email.com', senha: 'senha_valida', name: 'nome_valido' })
+        return user
+      } catch (error) {
+        console.error(error)
+      }
+>>>>>>> feature/0.7-DeleteUser
     }
   }
   const user = await new CreateUser()
@@ -34,16 +43,6 @@ describe('Login', () => {
       })
     expect(response.status).toBe(401)
   })
-  test('deve retornar 401 se se email for invalido', async () => {
-    await makeSUT()
-    const response = await request(app)
-      .post('/login')
-      .send({
-        email: 'email_invalido@email.com',
-        senha: 'senha_valida'
-      })
-    expect(response.status).toBe(401)
-  })
   test('deve retornar 401 se se senha for invalida', async () => {
     await makeSUT()
     const response = await request(app)
@@ -51,6 +50,16 @@ describe('Login', () => {
       .send({
         email: 'email_valido@email.com',
         senha: 'senha_invalida'
+      })
+    expect(response.status).toBe(401)
+  })
+  test('deve retornar 401 se se email for invalido', async () => {
+    await makeSUT()
+    const response = await request(app)
+      .post('/login')
+      .send({
+        email: 'email_invalido@email.com',
+        senha: 'senha_valida'
       })
     expect(response.status).toBe(401)
   })

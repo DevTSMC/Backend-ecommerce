@@ -21,14 +21,18 @@ class DbManage {
         return false
       }
     } else {
-      const user = await User.findOne({ where: { email } })
-      if (!user) {
-        return false
+      try {
+        const user = await User.findOne({ where: { email } })
+        if (!user) {
+          return false
+        }
+        if (!(await user.checkPassword(senha))) {
+          return false
+        }
+        return true
+      } catch (error) {
+        console.log(error)
       }
-      if (!(await user.checkPassword(senha))) {
-        return false
-      }
-      return true
     }
   }
 }
