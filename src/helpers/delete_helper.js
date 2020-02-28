@@ -18,7 +18,6 @@ class DbManage {
     } else {
       try {
         const result = await User.destroy({ where: { id } })
-        console.log(result)
         if (!result) { return false }
         return true
       } catch (error) {
