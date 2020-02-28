@@ -19,7 +19,6 @@ class DbManage {
       const user = await User.findOne({ where: { email } })
       if (!user) {
         const result = await User.create({ email, senha, name })
-        console.log(result)
         return true
       }
       return false
