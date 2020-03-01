@@ -1,4 +1,4 @@
-const User = require('../helpers/edit_helper')
+const User = require('../helpers/usuarios/edit_helper')
 class Edit {
   constructor (email, senha, name, id, test) {
     this.user = new User(email, senha, name, id, test)

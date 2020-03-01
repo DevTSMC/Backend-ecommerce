@@ -1,4 +1,4 @@
-const User = require('../helpers/recuperar_helper')
+const User = require('../helpers/usuarios/recuperar_helper')
 class Recuperar {
   constructor (email, test) {
     this.user = new User(email, test)

@@ -1,4 +1,4 @@
-const User = require('../helpers/login_helper')
+const User = require('../helpers/usuarios/login_helper')
 class Login {
   constructor (email, senha, test) {
     this.user = new User(email, senha, test)

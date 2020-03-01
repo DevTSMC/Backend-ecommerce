@@ -1,4 +1,4 @@
-const User = require('../helpers/delete_helper')
+const User = require('../helpers/usuarios/delete_helper')
 class Delete {
   constructor (id, test) {
     this.user = new User(id, test)
