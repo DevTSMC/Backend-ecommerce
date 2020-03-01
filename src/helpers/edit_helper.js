@@ -14,8 +14,7 @@ class DbManage {
   async Edit (email, senha, name, id) {
     if (this.test === true) {
       return true
-    }
-    else { 
+    } else {
       const user = await User.findOne({ where: { id } })
       if (!user) {
         return false
@@ -26,7 +25,7 @@ class DbManage {
       user.name = name
       user.email = email
       user.senha = senha
-      const result = user.save() 
+      const result = await user.save()
       if (result) {
         return true
       }

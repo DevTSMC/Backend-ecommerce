@@ -6,7 +6,12 @@ const { User } = require('../../src/models')
 const makeSUT = async () => {
   class CreateUser {
     async create () {
-      const user = await User.create({ email: 'correto@email.com', senha: 'Aa123abc@@', name: 'Maria Luiza' })
+      var forc = true
+      var user = ''
+      while (forc) {
+        user = await User.create({ email: 'correto@email.com', senha: 'Aa123abc@@', name: 'Maria Luiza' })
+        if (user) { forc = false }
+      }
       return user
     }
   }
@@ -48,7 +53,7 @@ describe('Cadastro', () => {
     expect(response.status).toBe(401)
   })
 
-  test('deve retornar 401 se email já existe', async () => {
+  test('deve retornar 401 se email já existir', async () => {
     await makeSUT()
     const response = await request(app)
       .post('/register')
@@ -57,8 +62,10 @@ describe('Cadastro', () => {
         email: 'correto@email.com',
         senha: 'Aa123abc@@'
       })
+    expect(response.body.message).toEqual('Email já utilizado')
     expect(response.status).toBe(401)
   })
+
   test('deve retornar 200 se cadastrado com sucesso', async () => {
     await makeSUT()
     const response = await request(app)

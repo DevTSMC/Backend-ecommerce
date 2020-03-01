@@ -56,7 +56,7 @@ describe('Edit', () => {
       .send({
         email: 'email_valido@email.com',
         nome: 'nomevalido',
-        senha: 'KKKKKKKKKKKKKKKporra',
+        senha: '87878787878787',
         id: '1'
       })
     expect(response.status).toBe(401)
@@ -75,7 +75,7 @@ describe('Edit', () => {
     expect(response.status).toBe(401)
   })
 
- test('deve retornar 200 se as edicoes foram feitas', async () => {
+  test('deve retornar 200 se as edicoes foram feitas', async () => {
     await makeSUT()
     const response = await request(app)
       .post('/edit')
