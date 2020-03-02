@@ -1,5 +1,5 @@
 const Regx = require('../utils/regex')
-const RegHelp = require('../helpers/register_helper')
+const RegHelp = require('../helpers/usuarios/register_helper')
 
 class Cadastro {
   constructor (nome, email, senha, test) {

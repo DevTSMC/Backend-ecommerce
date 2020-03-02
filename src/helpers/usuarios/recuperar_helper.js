@@ -1,5 +1,5 @@
-const { User } = require('../models')
-const Gerador = require('../../src/utils/createPass')
+const { User } = require('../../models')
+const Gerador = require('../../utils/createPass')
 
 class DbManage {
   constructor (email, test) {

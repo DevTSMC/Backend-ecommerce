@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User } = require('../../models')
 
 class DbManage {
   constructor (email, senha, name, id, test) {
